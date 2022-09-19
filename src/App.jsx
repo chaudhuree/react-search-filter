@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Users } from "./users";
+import Table from "./table";
 
 function App() {
   const [query, setQuery] = useState(null);
@@ -25,6 +26,7 @@ function App() {
             </li>
           ))}
       </ul>
+        <Table></Table>
     </div>
   );
 }
