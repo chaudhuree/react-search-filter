@@ -26,7 +26,7 @@ function App() {
             </li>
           ))}
       </ul>
-        <Table></Table>
+        <Table data={Users}/>
     </div>
   );
 }

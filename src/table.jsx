@@ -1,22 +1,24 @@
-import React from 'react';
+import React from "react";
 
-const Table = () => {
-    return (
-        <table>
-            <tbody>
-            <tr>
-                <th>Name</th>
-                <th>Surname</th>
-                <th>Email</th>
-            </tr>
-            <tr>
-                <td>sOhan</td>
-                <td>chaudhuree</td>
-                <td>chaudhuree@gmail.com</td>
-            </tr>
-            </tbody>
-        </table>
-    );
+const Table = ({ data }) => {
+  return (
+    <table>
+      <tbody>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Email</th>
+        </tr>
+        {data.slice(0,20).map((item) => (
+          <tr key={item.id}>
+            <td>{item.first_name}</td>
+            <td>{item.last_name}</td>
+            <td>{item.email}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
 };
 
 export default Table;
