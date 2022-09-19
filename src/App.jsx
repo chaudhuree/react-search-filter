@@ -10,17 +10,27 @@ function App() {
   // console.log(data);
 
   //  for multi-search function
+  // const search = (data) => {
+  //   return data.filter((user) => {
+  //     return (
+  //       user.first_name.toLowerCase().includes(query.toLowerCase()) ||
+  //       user.last_name.toLowerCase().includes(query.toLowerCase()) ||
+  //       user.email.toLowerCase().includes(query.toLowerCase())
+  //     );
+  //   });
+  // };
+  // console.log(search(Users));
 
+  //  multi-search advanced(efficient)
+  //   console.log([0]["email"]) //object bracket notation
+  const keys = ["first_name", "last_name", "email"];
   const search = (data) => {
     return data.filter((user) => {
-      return (
-        user.first_name.toLowerCase().includes(query.toLowerCase()) ||
-        user.last_name.toLowerCase().includes(query.toLowerCase()) ||
-        user.email.toLowerCase().includes(query.toLowerCase())
+      return keys.some((item) =>
+        user[item].toLowerCase().includes(query.toLowerCase())
       );
     });
   };
-  // console.log(search(Users));
   return (
     <div className="app">
       <input
@@ -39,6 +49,8 @@ function App() {
       {/*      </li>*/}
       {/*    ))}*/}
       {/*</ul>*/}
+
+      {/*table component*/}
       <Table data={search(Users)} />
     </div>
   );
