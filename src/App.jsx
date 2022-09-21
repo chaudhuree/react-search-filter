@@ -22,7 +22,8 @@ function App() {
   // console.log(search(Users));
 
   //  multi-search advanced(efficient)
-  //   console.log([0]["email"]) //object bracket notation
+  //   console.log(Users[0].email]) //object dot notation
+  //   console.log(Users[0]["email"]) //object bracket notation
   const keys = ["first_name", "last_name", "email"];
   const search = (data) => {
     return data.filter((user) => {
